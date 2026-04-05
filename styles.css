@@ -8261,6 +8261,388 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* AI-generated section */
+/* =============================================
+   GAS LEAK SECTION — איתור נזילות גז
+   ============================================= */
+.gas-leak-section {
+  position: relative;
+  background: var(--primary, #1F2937);
+  padding: 90px 20px 80px;
+  font-family: system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+  overflow: hidden;
+}
+
+/* Decorative background overlay */
+.gas-leak-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(43, 132, 214, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgba(255, 107, 0, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle grid texture */
+.gas-leak-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(43, 132, 214, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 132, 214, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gas-leak-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---- Header ---- */
+.gas-leak-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.gas-leak-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  background: rgba(43, 132, 214, 0.12);
+  border: 2px solid rgba(43, 132, 214, 0.35);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 32px rgba(43, 132, 214, 0.2), 0 0 0 8px rgba(43, 132, 214, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gas-leak-icon-wrapper:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 48px rgba(43, 132, 214, 0.35), 0 0 0 12px rgba(43, 132, 214, 0.08);
+}
+
+.gas-leak-icon {
+  width: 52px;
+  height: 52px;
+  display: block;
+}
+
+.gas-leak-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(43, 132, 214, 0.25), rgba(22, 87, 155, 0.35));
+  border: 1px solid rgba(43, 132, 214, 0.5);
+  color: #7EC8F8;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 5px 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.gas-leak-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.gas-leak-subtitle {
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  color: #7EC8F8;
+  font-weight: 600;
+  margin: 0 0 18px;
+}
+
+.gas-leak-description {
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ---- Content Grid ---- */
+.gas-leak-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+/* ---- Image ---- */
+.gas-leak-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(43, 132, 214, 0.25);
+}
+
+.gas-leak-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.gas-leak-image-wrapper:hover .gas-leak-image {
+  transform: scale(1.03);
+}
+
+.gas-leak-image-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: var(--gradient-primary, linear-gradient(180deg, #2B84D6 0%, #16579B 100%));
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gas-leak-image-badge-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.gas-leak-image-badge-text {
+  white-space: nowrap;
+}
+
+/* ---- Benefits ---- */
+.gas-leak-benefits-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.gas-leak-benefits-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(43, 132, 214, 0.35);
+}
+
+.gas-leak-benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gas-leak-benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(43, 132, 214, 0.2);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.gas-leak-benefit-item:hover {
+  background: rgba(43, 132, 214, 0.12);
+  border-color: rgba(43, 132, 214, 0.5);
+  transform: translateX(-3px);
+  box-shadow: 0 4px 20px rgba(43, 132, 214, 0.15);
+}
+
+.gas-leak-benefit-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: rgba(43, 132, 214, 0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.gas-leak-benefit-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.gas-leak-benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gas-leak-benefit-title-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+}
+
+.gas-leak-benefit-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+}
+
+/* ---- CTA ---- */
+.gas-leak-cta-wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.gas-leak-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gradient-primary, linear-gradient(180deg, #2B84D6 0%, #16579B 100%));
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 18px 48px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 8px 32px rgba(43, 132, 214, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  letter-spacing: 0.02em;
+}
+
+.gas-leak-cta-btn:hover,
+.gas-leak-cta-btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 48px rgba(43, 132, 214, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+  filter: brightness(1.1);
+  outline: none;
+}
+
+.gas-leak-cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 16px rgba(43, 132, 214, 0.4);
+}
+
+.gas-leak-cta-btn:focus-visible {
+  outline: 3px solid #7EC8F8;
+  outline-offset: 4px;
+}
+
+.gas-leak-cta-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.gas-leak-cta-note {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* =============================================
+   RESPONSIVE — Tablet
+   ============================================= */
+@media (max-width: 900px) {
+  .gas-leak-content-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .gas-leak-image {
+    height: 300px;
+  }
+
+  .gas-leak-section {
+    padding: 70px 20px 60px;
+  }
+}
+
+/* =============================================
+   RESPONSIVE — Mobile
+   ============================================= */
+@media (max-width: 600px) {
+  .gas-leak-section {
+    padding: 56px 16px 48px;
+  }
+
+  .gas-leak-header {
+    margin-bottom: 40px;
+  }
+
+  .gas-leak-icon-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .gas-leak-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gas-leak-image {
+    height: 240px;
+  }
+
+  .gas-leak-benefit-item {
+    padding: 13px 14px;
+  }
+
+  .gas-leak-cta-btn {
+    font-size: 1rem;
+    padding: 16px 32px;
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .gas-leak-content-grid {
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .gas-leak-image-badge {
+    bottom: 12px;
+    right: 12px;
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
