@@ -986,130 +986,544 @@
         </linearGradient>
       </defs>
       <!-- Stepped overlap layer -->
-      <path d="M0,64 L0,44 L300,38 L600,44 L900,38 L1200,44 L1200,64 Z" fill="#1C2B3A"></path>
+      <path d="M0,64 L0,44 L300,38 L600,44 L900,38 L1200,44 L1200,64 Z" fill="var(--bg-light)"></path>
       <!-- Dark base fill for next section -->
-      <path d="M0,64 L0,56 Q200,50 400,56 T800,52 Q1000,56 1200,52 L1200,64 Z" fill="#1C2B3A"></path>
+      <path d="M0,64 L0,56 Q200,50 400,56 T800,52 Q1000,56 1200,52 L1200,64 Z" fill="var(--bg-light)"></path>
     </svg>
   </div>
 
 </section>
 
-<section class="roots-service-section" aria-labelledby="roots-service-title">
-  <div class="roots-service-container">
+<section style="width:100%;max-width:100%;box-sizing:border-box;position:relative;overflow:hidden;font-family:system-ui,sans-serif;direction:rtl;" data-zappy-section="true" class="section">
+<style>
+  .sewer-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-dark, #1F2937);
+  }
 
-    <!-- Visual Badge -->
-    <div class="roots-service-badge" aria-hidden="true">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="rgba(255,255,255,0.15)"/>
-        <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      שירות מקצועי
-    </div>
+  .sewer-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+  }
 
-    <div class="roots-service-layout">
+  .sewer-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(15,23,42,0.97) 0%, rgba(15,23,42,0.88) 45%, rgba(14,165,233,0.18) 100%);
+  }
 
-      <!-- Content Side -->
-      <div class="roots-service-content">
-        <h2 class="roots-service-title" id="roots-service-title">
-          פתיחת סטימות שורשים
-        </h2>
-        <p class="roots-service-subtitle">
-          ניקוי ופתיחת ביוב שנסתם עקב חדירת שורשי עצים
-        </p>
-        <p class="roots-service-description">
-          שורשי עצים הם אחד הגורמים הנפוצים ביותר לסתימות ביוב קשות. הם חודרים לצינורות דרך סדקים זעירים, מתרחבים ומחסמים את זרימת הביוב לחלוטין. אנו משתמשים בציוד מקצועי מתקדם לאיתור מדויק ופתיחה יעילה — ללא צורך בחפירות מיותרות.
-        </p>
+  .sewer-accent-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--gradient-gold-shine, linear-gradient(180deg,#F9C756,#D99200));
+    z-index: 3;
+  }
 
-        <!-- Features List -->
-        <ul class="roots-service-features" aria-label="יתרונות השירות">
-          <li class="roots-feature-item">
-            <span class="roots-feature-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-              </svg>
-            </span>
-            <span>איתור מדויק עם מצלמת ביוב</span>
-          </li>
-          <li class="roots-feature-item">
-            <span class="roots-feature-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-              </svg>
-            </span>
-            <span>ניקוי בלחץ מים גבוה (Hydro Jet)</span>
-          </li>
-          <li class="roots-feature-item">
-            <span class="roots-feature-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-              </svg>
-            </span>
-            <span>ללא חפירה — מינימום נזק לרכוש</span>
-          </li>
-          <li class="roots-feature-item">
-            <span class="roots-feature-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-              </svg>
-            </span>
-            <span>זמינות מהירה באילת והערבה</span>
-          </li>
-        </ul>
+  .sewer-content-wrap {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 96px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0 64px;
+    align-items: center;
+  }
 
-        <!-- CTA -->
-        <a href="tel:0515729144" class="roots-service-cta" aria-label="התקשרו עכשיו לפתיחת סטימות שורשים">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="white"/>
-          </svg>
+  .sewer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .sewer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(14,165,233,0.15);
+    border: 1px solid rgba(14,165,233,0.4);
+    border-radius: var(--radius-badge, 6px);
+    padding: 8px 18px;
+    width: fit-content;
+    position: relative;
+  }
+
+  .sewer-badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--secondary, #0EA5E9);
+    animation: pulse-dot 1.8s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%,100%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.4);opacity:0.7;}
+  }
+
+  .sewer-badge-text {
+    color: var(--secondary, #0EA5E9);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .sewer-heading {
+    font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin: 0;
+    position: relative;
+  }
+
+  .sewer-heading span {
+    color: var(--accent, #F59E0B);
+    position: relative;
+    display: inline-block;
+  }
+
+  .sewer-heading span::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-gold-shine, linear-gradient(90deg,#D99200,#F9C756));
+    border-radius: 2px;
+  }
+
+  .sewer-subtext {
+    font-size: 1rem;
+    color: rgba(248,250,252,0.6);
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+
+  .sewer-desc {
+    font-size: 1.05rem;
+    color: rgba(248,250,252,0.85);
+    line-height: 1.8;
+    margin: 0;
+    border-right: 3px solid var(--secondary, #0EA5E9);
+    padding-right: 18px;
+  }
+
+  .sewer-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sewer-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: var(--radius-card, 12px);
+    padding: 14px 16px;
+    transition: var(--transition-default, all 0.22s ease);
+    cursor: default;
+  }
+
+  .sewer-feature-item:hover {
+    background: rgba(14,165,233,0.13);
+    border-color: rgba(14,165,233,0.35);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .sewer-feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--secondary, #0EA5E9), #0284c7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .sewer-feature-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sewer-feature-text {
+    font-size: 0.9rem;
+    color: rgba(248,250,252,0.9);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .sewer-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .sewer-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--gradient-gold-shine, linear-gradient(90deg,#D99200,#F9C756));
+    color: #1F2937;
+    font-weight: 800;
+    font-size: 1.05rem;
+    padding: 16px 36px;
+    border-radius: var(--radius-btn, 8px);
+    text-decoration: none;
+    box-shadow: 0 8px 28px rgba(245,158,11,0.35);
+    transition: var(--transition-hover, all 0.18s ease);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sewer-cta-link::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .sewer-cta-link:hover::before {
+    left: 100%;
+  }
+
+  .sewer-cta-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 38px rgba(245,158,11,0.5);
+  }
+
+  .sewer-cta-link svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .sewer-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sewer-img-frame {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    aspect-ratio: 4/3;
+  }
+
+  .sewer-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .sewer-img-frame:hover img {
+    transform: scale(1.04);
+  }
+
+  .sewer-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(14,165,233,0.25) 100%);
+    pointer-events: none;
+  }
+
+  .sewer-corner-deco {
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    width: 80px;
+    height: 80px;
+    border-top: 4px solid var(--accent, #F59E0B);
+    border-right: 4px solid var(--accent, #F59E0B);
+    border-radius: 0 16px 0 0;
+    pointer-events: none;
+  }
+
+  .sewer-corner-deco-bl {
+    position: absolute;
+    bottom: -18px;
+    left: -18px;
+    width: 80px;
+    height: 80px;
+    border-bottom: 4px solid var(--secondary, #0EA5E9);
+    border-left: 4px solid var(--secondary, #0EA5E9);
+    border-radius: 0 0 0 16px;
+    pointer-events: none;
+  }
+
+  .sewer-float-badge {
+    position: absolute;
+    bottom: 24px;
+    right: -24px;
+    background: var(--gradient-primary, linear-gradient(180deg,#2B84D6,#16579B));
+    color: #fff;
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 10px 30px rgba(14,165,233,0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 5;
+  }
+
+  .sewer-float-badge svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+
+  .sewer-float-badge-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .sewer-float-badge-text span {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--accent, #F59E0B);
+  }
+
+  .sewer-geo-deco {
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    transform: translateY(-50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(14,165,233,0.06);
+    border: 1px solid rgba(14,165,233,0.12);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .sewer-geo-deco-2 {
+    position: absolute;
+    bottom: -60px;
+    left: 30%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(245,158,11,0.05);
+    border: 1px solid rgba(245,158,11,0.1);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .sewer-divider-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  @media (max-width: 900px) {
+    .sewer-content-wrap {
+      grid-template-columns: 1fr;
+      padding: 100px 24px 72px;
+      gap: 48px;
+    }
+    .sewer-right {
+      order: -1;
+    }
+    .sewer-img-frame {
+      max-width: 100%;
+    }
+    .sewer-float-badge {
+      right: 12px;
+      bottom: 12px;
+    }
+    .sewer-corner-deco, .sewer-corner-deco-bl {
+      display: none;
+    }
+    .sewer-features {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .sewer-heading {
+      font-size: 1.9rem;
+    }
+    .sewer-cta-link {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<div class="sewer-section">
+  <!-- Background image layer -->
+  <div class="sewer-bg-image" style="background-image: url('assets/image-1775428803081-ktjme5.webp?v=1775428803081'); background-size:cover;background-position:center;opacity:0.18;"></div>
+
+  <!-- Dark overlay -->
+  <div class="sewer-overlay"></div>
+
+  <!-- Right accent bar -->
+  <div class="sewer-accent-bar"></div>
+
+  <!-- Decorative circles -->
+  <div class="sewer-geo-deco"></div>
+  <div class="sewer-geo-deco-2"></div>
+
+  <!-- Main content -->
+  <div class="sewer-content-wrap">
+
+    <!-- LEFT: Text content -->
+    <div class="sewer-left">
+
+      <!-- Badge -->
+      <div class="sewer-badge">
+        <div class="sewer-badge-dot"></div>
+        <span class="sewer-badge-text">
+          <!-- Icon 0 -->
+          טכנולוגיה מתקדמת
+        </span>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="sewer-heading">פתיחת סטימות <span>שורשים</span></h2>
+
+      <!-- Subtext -->
+      <p class="sewer-subtext">ניקוי ופתיחת ביוב שנסתם עקב חדירת שורשי עצים</p>
+
+      <!-- Description -->
+      <p class="sewer-desc">שורשי עצים הם אחד הגורמים הנפוצים ביותר לסתימות ביוב קשות. הם חודרים לצינורות דרך סדקים זעירים, מתרחבים ומחסמים את זרימת הביוב לחלוטין. אנו משתמשים בציוד מקצועי מתקדם לאיתור מדויק ופתיחה יעילה — ללא צורך בחפירות מיותרות.</p>
+
+      <!-- Feature list -->
+      <ul class="sewer-features">
+
+        <li class="sewer-feature-item">
+          <div class="sewer-feature-icon">
+            <!-- Icon 1 -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          </div>
+          <span class="sewer-feature-text">איתור מדויק עם מצלמת ביוב</span>
+        </li>
+
+        <li class="sewer-feature-item">
+          <div class="sewer-feature-icon">
+            <!-- Icon 2 -->
+            <svg viewBox="0 0 24 24"><path d="M12 2C6 2 2 7 2 12s4 10 10 10 10-4.5 10-10S18 2 12 2z"></path><path d="M12 6v6l4 2"></path></svg>
+          </div>
+          <span class="sewer-feature-text">ניקוי בלחץ מים גבוה (Hydro Jet)</span>
+        </li>
+
+        <li class="sewer-feature-item">
+          <div class="sewer-feature-icon">
+            <!-- Icon 3 -->
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"></path><rect x="3" y="3" width="18" height="18" rx="4"></rect></svg>
+          </div>
+          <span class="sewer-feature-text">ללא חפירה — מינימום נזק לרכוש</span>
+        </li>
+
+        <li class="sewer-feature-item">
+          <div class="sewer-feature-icon">
+            <!-- Icon 4 -->
+            <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+          </div>
+          <span class="sewer-feature-text">זמינות מהירה באילת והערבה</span>
+        </li>
+
+      </ul>
+
+      <!-- CTA -->
+      <div class="sewer-cta-row">
+        <a href="tel:0515729144" class="sewer-cta-link">
+          <!-- Icon 5 -->
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1.07h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
           התקשרו עכשיו
         </a>
       </div>
 
-      <!-- Image Side -->
-      <div class="roots-service-image-wrap">
-        <div class="roots-service-image-container">
-          <img
-            src="/assets/image-1775428803081-ktjme5.webp?v=1775428803081"
-            alt="פתיחת סטימות שורשים — ניקוי ביוב מקצועי"
-            class="roots-service-img"
-            data-placeholder="roots-service-main"
-            data-context="Professional plumber using hydro jet equipment to clear tree root blockage in sewer pipe, outdoor setting, technical work"
-          />
-          <!-- Floating Badge -->
-          <div class="roots-img-badge" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2B84D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>טכנולוגיה מתקדמת</span>
-          </div>
-        </div>
+    </div>
 
-        <!-- Decorative Root Icon -->
-        <div class="roots-decorative-icon" aria-hidden="true">
-          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="60" cy="60" r="58" stroke="rgba(43,132,214,0.15)" stroke-width="2"/>
-            <circle cx="60" cy="60" r="44" stroke="rgba(43,132,214,0.1)" stroke-width="2"/>
-            <!-- Tree root illustration -->
-            <path d="M60 30 Q60 50 60 60" stroke="rgba(43,132,214,0.5)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M60 60 Q45 68 35 80" stroke="rgba(43,132,214,0.4)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M60 60 Q75 68 85 80" stroke="rgba(43,132,214,0.4)" stroke-width="2.5" stroke-linecap="round"/>
-            <path d="M60 65 Q50 72 42 72" stroke="rgba(43,132,214,0.3)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M60 65 Q70 72 78 72" stroke="rgba(43,132,214,0.3)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M35 80 Q28 85 25 92" stroke="rgba(43,132,214,0.25)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M85 80 Q92 85 95 92" stroke="rgba(43,132,214,0.25)" stroke-width="2" stroke-linecap="round"/>
-            <!-- Pipe line -->
-            <path d="M20 90 H100" stroke="rgba(43,132,214,0.6)" stroke-width="4" stroke-linecap="round"/>
-            <path d="M20 98 H100" stroke="rgba(43,132,214,0.6)" stroke-width="4" stroke-linecap="round"/>
-          </svg>
+    <!-- RIGHT: Image -->
+    <div class="sewer-right">
+      <div class="sewer-corner-deco"></div>
+      <div class="sewer-corner-deco-bl"></div>
+
+      <div class="sewer-img-frame">
+        <img alt="פתיחת סטימות שורשים — ניקוי ביוב מקצועי" src="/assets/image-1775428803081-ktjme5.webp?v=1775428803081" data-placeholder="roots-service-main" data-context="Professional plumber using hydro jet equipment to clear tree root blockage in sewer pipe, outdoor setting, technical work" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        <div class="sewer-img-overlay"></div>
+      </div>
+
+      <!-- Floating badge -->
+      <div class="sewer-float-badge">
+        <!-- Icon 6 -->
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        <div class="sewer-float-badge-text">
+          פעילים
+          <span>24/7</span>
         </div>
       </div>
 
     </div>
+
   </div>
+
+  <!-- Bottom SVG divider -->
+  <div class="sewer-divider-bottom">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" style="display:block;width:100%;height:100%;">
+      <path d="M0,60 C400,0 800,0 1200,60 L1200,60 L0,60 Z" fill="var(--bg-light,#F8FAFC)"></path>
+    </svg>
+  </div>
+
+</div>
 </section>
 
 <section class="gas-leak-section" aria-labelledby="gas-leak-title">
@@ -1120,19 +1534,19 @@
     <div class="gas-leak-header">
       <div class="gas-leak-icon-wrapper" aria-hidden="true">
         <svg class="gas-leak-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M32 4C32 4 18 18 18 32C18 39.7 24.3 46 32 46C39.7 46 46 39.7 46 32C46 18 32 4 32 4Z" fill="url(#flameGrad1)"/>
-          <path d="M32 16C32 16 24 26 24 34C24 38.4 27.6 42 32 42C36.4 42 40 38.4 40 34C40 26 32 16 32 16Z" fill="url(#flameGrad2)"/>
-          <path d="M32 28C32 28 28 33 28 36C28 38.2 29.8 40 32 40C34.2 40 36 38.2 36 36C36 33 32 28 32 28Z" fill="#fff" opacity="0.9"/>
-          <ellipse cx="32" cy="54" rx="12" ry="4" fill="rgba(43,132,214,0.3)"/>
+          <path d="M32 4C32 4 18 18 18 32C18 39.7 24.3 46 32 46C39.7 46 46 39.7 46 32C46 18 32 4 32 4Z" fill="url(#flameGrad1)"></path>
+          <path d="M32 16C32 16 24 26 24 34C24 38.4 27.6 42 32 42C36.4 42 40 38.4 40 34C40 26 32 16 32 16Z" fill="url(#flameGrad2)"></path>
+          <path d="M32 28C32 28 28 33 28 36C28 38.2 29.8 40 32 40C34.2 40 36 38.2 36 36C36 33 32 28 32 28Z" fill="#fff" opacity="0.9"></path>
+          <ellipse cx="32" cy="54" rx="12" ry="4" fill="rgba(43,132,214,0.3)"></ellipse>
           <defs>
             <linearGradient id="flameGrad1" x1="32" y1="4" x2="32" y2="46" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFD700"/>
-              <stop offset="50%" stop-color="#FF6B00"/>
-              <stop offset="100%" stop-color="#2B84D6"/>
+              <stop offset="0%" stop-color="#FFD700"></stop>
+              <stop offset="50%" stop-color="#FF6B00"></stop>
+              <stop offset="100%" stop-color="#2B84D6"></stop>
             </linearGradient>
             <linearGradient id="flameGrad2" x1="32" y1="16" x2="32" y2="42" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#FFA500"/>
-              <stop offset="100%" stop-color="#FF4500"/>
+              <stop offset="0%" stop-color="#FFA500"></stop>
+              <stop offset="100%" stop-color="#FF4500"></stop>
             </linearGradient>
           </defs>
         </svg>
@@ -1150,13 +1564,7 @@
 
       <!-- Image Side -->
       <div class="gas-leak-image-wrapper">
-        <img
-          src="/assets/image-1775428968598-ml7i1b.webp?v=1775428968598"
-          alt="טכנאי מקצועי מבצע איתור נזילות גז בעזרת ציוד אלקטרוני מתקדם"
-          class="gas-leak-image"
-          data-placeholder="gas-leak-technician"
-          data-context="Professional gas leak detection technician using advanced electronic equipment to detect gas leaks in a home, safety gear, modern tools, dark professional setting"
-        />
+        <img src="/assets/image-1775428968598-ml7i1b.webp?v=1775428968598" alt="טכנאי מקצועי מבצע איתור נזילות גז בעזרת ציוד אלקטרוני מתקדם" class="gas-leak-image" data-placeholder="gas-leak-technician" data-context="Professional gas leak detection technician using advanced electronic equipment to detect gas leaks in a home, safety gear, modern tools, dark professional setting">
         <div class="gas-leak-image-badge" aria-label="מענה מהיר עד שעה">
           <span class="gas-leak-image-badge-icon" aria-hidden="true">⚡</span>
           <span class="gas-leak-image-badge-text">מענה עד שעה</span>
@@ -1170,10 +1578,10 @@
           <li class="gas-leak-benefit-item">
             <span class="gas-leak-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 3H4C3.4 3 3 3.4 3 4V9C3 9.6 3.4 10 4 10H9C9.6 10 10 9.6 10 9V4C10 3.4 9.6 3 9 3Z" fill="#2B84D6"/>
-                <path d="M20 3H15C14.4 3 14 3.4 14 4V9C14 9.6 14.4 10 15 10H20C20.6 10 21 9.6 21 9V4C21 3.4 20.6 3 20 3Z" fill="#2B84D6" opacity="0.6"/>
-                <path d="M9 14H4C3.4 14 3 14.4 3 15V20C3 20.6 3.4 21 4 21H9C9.6 21 10 20.6 10 20V15C10 14.4 9.6 14 9 14Z" fill="#2B84D6" opacity="0.6"/>
-                <path d="M20 14H15C14.4 14 14 14.4 14 15V20C14 20.6 14.4 21 15 21H20C20.6 21 21 20.6 21 20V15C21 14.4 20.6 14 20 14Z" fill="#2B84D6" opacity="0.4"/>
+                <path d="M9 3H4C3.4 3 3 3.4 3 4V9C3 9.6 3.4 10 4 10H9C9.6 10 10 9.6 10 9V4C10 3.4 9.6 3 9 3Z" fill="#2B84D6"></path>
+                <path d="M20 3H15C14.4 3 14 3.4 14 4V9C14 9.6 14.4 10 15 10H20C20.6 10 21 9.6 21 9V4C21 3.4 20.6 3 20 3Z" fill="#2B84D6" opacity="0.6"></path>
+                <path d="M9 14H4C3.4 14 3 14.4 3 15V20C3 20.6 3.4 21 4 21H9C9.6 21 10 20.6 10 20V15C10 14.4 9.6 14 9 14Z" fill="#2B84D6" opacity="0.6"></path>
+                <path d="M20 14H15C14.4 14 14 14.4 14 15V20C14 20.6 14.4 21 15 21H20C20.6 21 21 20.6 21 20V15C21 14.4 20.6 14 20 14Z" fill="#2B84D6" opacity="0.4"></path>
               </svg>
             </span>
             <div class="gas-leak-benefit-content">
@@ -1184,8 +1592,8 @@
           <li class="gas-leak-benefit-item">
             <span class="gas-leak-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L3 7V12C3 16.5 7 20.7 12 22C17 20.7 21 16.5 21 12V7L12 2Z" fill="#2B84D6"/>
-                <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 2L3 7V12C3 16.5 7 20.7 12 22C17 20.7 21 16.5 21 12V7L12 2Z" fill="#2B84D6"></path>
+                <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
               </svg>
             </span>
             <div class="gas-leak-benefit-content">
@@ -1196,8 +1604,8 @@
           <li class="gas-leak-benefit-item">
             <span class="gas-leak-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="9" stroke="#2B84D6" stroke-width="2" fill="none"/>
-                <path d="M12 7V12L15 15" stroke="#2B84D6" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="9" stroke="#2B84D6" stroke-width="2" fill="none"></circle>
+                <path d="M12 7V12L15 15" stroke="#2B84D6" stroke-width="2" stroke-linecap="round"></path>
               </svg>
             </span>
             <div class="gas-leak-benefit-content">
@@ -1208,9 +1616,9 @@
           <li class="gas-leak-benefit-item">
             <span class="gas-leak-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#2B84D6" stroke-width="2" fill="none"/>
-                <path d="M3 9H21" stroke="#2B84D6" stroke-width="2"/>
-                <path d="M9 21V9" stroke="#2B84D6" stroke-width="2"/>
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#2B84D6" stroke-width="2" fill="none"></rect>
+                <path d="M3 9H21" stroke="#2B84D6" stroke-width="2"></path>
+                <path d="M9 21V9" stroke="#2B84D6" stroke-width="2"></path>
               </svg>
             </span>
             <div class="gas-leak-benefit-content">
@@ -1221,9 +1629,9 @@
           <li class="gas-leak-benefit-item">
             <span class="gas-leak-benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2H6C5.4 2 5 2.4 5 3V21C5 21.6 5.4 22 6 22H18C18.6 22 19 21.6 19 21V7L14 2Z" stroke="#2B84D6" stroke-width="2" fill="none"/>
-                <path d="M14 2V7H19" stroke="#2B84D6" stroke-width="2"/>
-                <path d="M9 13H15M9 17H13" stroke="#2B84D6" stroke-width="2" stroke-linecap="round"/>
+                <path d="M14 2H6C5.4 2 5 2.4 5 3V21C5 21.6 5.4 22 6 22H18C18.6 22 19 21.6 19 21V7L14 2Z" stroke="#2B84D6" stroke-width="2" fill="none"></path>
+                <path d="M14 2V7H19" stroke="#2B84D6" stroke-width="2"></path>
+                <path d="M9 13H15M9 17H13" stroke="#2B84D6" stroke-width="2" stroke-linecap="round"></path>
               </svg>
             </span>
             <div class="gas-leak-benefit-content">
@@ -1254,7 +1662,7 @@
     <div class="patch-service-content">
       <div class="patch-service-badge" aria-label="תג שירות">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"></path>
         </svg>
         שירות מקצועי
       </div>
@@ -1270,7 +1678,7 @@
         <li class="patch-benefit-item">
           <span class="patch-benefit-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
           <span>תיקון ממוקד בנקודת הנזילה בלבד</span>
@@ -1278,7 +1686,7 @@
         <li class="patch-benefit-item">
           <span class="patch-benefit-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
           <span>ללא פציחת קירות וריצפות</span>
@@ -1286,7 +1694,7 @@
         <li class="patch-benefit-item">
           <span class="patch-benefit-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
           <span>שימוש בחומרים וכלים מקצועיים</span>
@@ -1294,7 +1702,7 @@
         <li class="patch-benefit-item">
           <span class="patch-benefit-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
           <span>גמר הבית נשמר ללא פגע</span>
@@ -1302,7 +1710,7 @@
         <li class="patch-benefit-item">
           <span class="patch-benefit-icon" aria-hidden="true">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </span>
           <span>זמינות מהירה באילת והערבה</span>
@@ -1312,7 +1720,7 @@
       <a href="/contact" class="patch-service-cta" aria-label="לתיאום שירות תיקון צנרת פאץ'">
         לתיאום עכשיו
         <svg class="patch-cta-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 12H5M12 5L5 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19 12H5M12 5L5 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
         </svg>
       </a>
     </div>
@@ -1320,16 +1728,10 @@
     <!-- Image Column -->
     <div class="patch-service-image-col">
       <div class="patch-service-image-wrapper">
-        <img
-          src="/assets/image-1775429156829-xw9riu.webp?v=1775429156829"
-          alt="טכנאי מבצע תיקון צנרת פאץ' מקצועי ללא הרס קירות"
-          class="patch-service-image"
-          data-placeholder="patch-repair-service"
-          data-context="Professional plumber performing a precise pipe patch repair, fixing a leak in a wall pipe without breaking tiles or walls, using advanced tools and materials, clean modern Israeli home interior"
-        />
+        <img src="/assets/image-1775429156829-xw9riu.webp?v=1775429156829" alt="טכנאי מבצע תיקון צנרת פאץ' מקצועי ללא הרס קירות" class="patch-service-image" data-placeholder="patch-repair-service" data-context="Professional plumber performing a precise pipe patch repair, fixing a leak in a wall pipe without breaking tiles or walls, using advanced tools and materials, clean modern Israeli home interior">
         <div class="patch-image-badge-float" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
           <span>ללא הרס</span>
         </div>
