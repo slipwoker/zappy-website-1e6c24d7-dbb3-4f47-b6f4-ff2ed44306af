@@ -1,0 +1,47 @@
+# Business — Generative Engine Optimization Map
+
+---
+
+## Pages
+
+### בית
+https://example.com
+איתור נזילות באילת והערבה במהירות וביעילות מרבית. אנו מאתרים כל נזילה נסתרת ללא פתיחת קירות, חוסכים לך זמן וכסף. התקשר עכשיו לאבחון מקצועי!
+
+### שירותים
+https://example.com/services
+בדיקת נזילות מים בדירה, פתיחת סטימות שורשים ואיתור ללא פתיחת קירות — כל השירותים שלנו מבוצעים עם ציוד חדשני ומומחיות מוכחת. גלה את מגוון הפתרונות שלנו!
+
+### אודות
+https://example.com/about
+הכירו את הצוות המקצועי שמאחורי איתור נזילות באילת והערבה. שנות ניסיון, טכנולוגיה מתקדמת ומחויבות מלאה לשביעות רצונכם — כי הבית שלכם ראוי לטיפול הטוב ביותר.
+
+### צור קשר
+https://example.com/contact
+אל תתנו לנזילה נסתרת להפוך לאסון יקר! צרו קשר עם מומחי איתור נזילות באילת והערבה לתיאום ביקור מהיר, אבחון מדויק וטיפול ללא פתיחת קירות. אנחנו כאן בשבילכם!
+
+## Legal & Policy
+
+### Privacy Policy
+https://example.com/privacy
+Information about how user data is collected, stored, and protected.
+
+### Terms & Conditions
+https://example.com/terms
+Legal terms describing service usage, rights, and policies.
+
+### Accessibility Statement
+https://example.com/accessibility
+Information about WCAG compliance and accessibility features.
+
+---
+
+# Business Context (for LLM understanding)
+
+## About Business
+---
+
+# Additional Resources
+
+- **Sitemap**: https://example.com/sitemap.xml
+- **Robots.txt**: https://example.com/robots.txt
