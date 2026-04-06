@@ -1,6 +1,4 @@
-# אילת איתור נזילות — Generative Engine Optimization Map
-
-> A leak detection service business specializing in identifying and locating water leaks. The business operates in the plumbing and home maintenance industry, providing professional diagnostic services to help homeowners and property managers find hidden leaks quickly and efficiently.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -40,22 +38,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About אילת איתור נזילות
-A leak detection service business specializing in identifying and locating water leaks. The business operates in the plumbing and home maintenance industry, providing professional diagnostic services to help homeowners and property managers find hidden leaks quickly and efficiently.
-
-## Services/Products
-- איתור נזילות
-
-## Target Audience
-- בעלי בתים בדרום
-- מנהלי נכסים
-- משקיעי נדל"ן
-- רוכשי דירות חדשות
-- קבלני שיפוצים
-
-## Industry
-שירותי אינסטלציה ותחזוקה
-
+## About Business
 ---
 
 # Additional Resources
